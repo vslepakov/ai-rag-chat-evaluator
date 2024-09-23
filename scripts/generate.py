@@ -7,6 +7,7 @@ from pathlib import Path
 from azure.ai.generative.synthetic.qa import QADataGenerator, QAType
 from azure.search.documents import SearchClient
 
+from utils.qa import CustomQADataGenerator
 from . import service_setup
 
 logger = logging.getLogger("scripts")
@@ -26,7 +27,7 @@ def generate_test_qa_data(
         num_questions_per_source,
     )
 
-    qa_generator = QADataGenerator(model_config=openai_config)
+    qa_generator = CustomQADataGenerator(model_config=openai_config, templates_dir=Path("prompt_templates"))
 
     r = search_client.search("", top=1000)
     qa: list[dict] = []
@@ -36,13 +37,13 @@ def generate_test_qa_data(
         logger.info("Processing search document %s", doc[citation_field_name])
         text = doc["content"]
 
-        result = qa_generator.generate(
+        results = qa_generator.generate(
             text=text,
             qa_type=QAType.LONG_ANSWER,
             num_questions=num_questions_per_source,
         )
 
-        for question, answer in result["question_answers"]:
+        for question, answer in results["question_answers"]:
             citation = f"[{doc[citation_field_name]}]"
             qa.append({"question": question, "truth": answer + citation})
 

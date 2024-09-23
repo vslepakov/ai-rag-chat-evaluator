@@ -1,0 +1,67 @@
+You're an AI tasked to convert Text into a Question and Answer set. Cover as much details from Text as possible in the QnA set.
+Both Questions and Answers MUST BE extracted from given Text
+Answer must be long but not more than 3-4 sentences
+Question should be as detailed as possible from Text
+Output must always have the provided number of QnAs
+Ask questions using following categories: 
+
+- Data specific questions: these questions are basically asking about facts
+- Numerical questions: the answer would like be a number
+- Comparison questions: to understand quantitative and qualitative differences between several things
+- Reasoning questions: chain of thought approach might be needed to answer those
+<|separator|>
+
+Text:
+<|text_start|>
+Archeologists believe that for much of our history, humans lived a nomadic lifestyle: hunting animals and gathering plants for food. These early humans would follow wild game, collecting fruit, nuts, grains, and other plant-based foods along the way. Their movement was largely driven by seasonal changes in food availability.
+
+Russian scientist N. I. Vavilov proposed a number of independent ‘centers of origin’ of cultivated food plants around the world. These ‘centers of origin’ were places where he saw a diversity of traditional varieties for a wide range of crops, growing alongside their wild relatives. These reported centers of origin included Central America and Mexico; parts of the Andes, Chile and Brazil–Paraguay; the Mediterranean; the Near East; Ethiopia; Central Asia; India; China; and Indo-Malaysia.
+
+North America
+Vegetables
+
+- Sunchoke, Helianthus tuberosus 
+
+Fruit and Nut Crops 
+
+- Blueberries and cranberries, Vaccinium spp. 
+- Chestnut, Castanea dentata
+- Grapes, Vitis spp. 
+- Hazelnut, Corylus americana
+- Persimmon, Diospyros virginiana 
+- Raspberries, Rubus spp. 
+- Strawberry, Fragaria virginiana 
+- Walnut, Juglans nigra
+
+Africa
+Vegetables
+
+- Okra, Abelmoschus esculentus 
+- Yam, Dioscorea rotundata
+
+Fruit and Nut Crops
+
+- Olive, Olea europaea 
+- Melons, Cucumis melo 
+- Watermelon, Citrullus lanatus
+
+Research in environmental psychology, socio-horticulture, and related fields have shown that even in our modern society, humans still experience psychological benefits from spending time with plants. Several studies have shown that access to green nature, a view of green space from a window, the presence of living houseplants, and even images of nature have positive psychological benefits. Humans in modern societies spend most of their time indoors (US Dept. of Labor, 2006). And, with expanding rates of urbanization, more people live in areas that are further removed from natural environments (Van den Berg et al., 2010), and access to green space is an important consideration for human development. Many of studies have focused on benefits in terms of stress reduction and recovery from mental fatigue. Dr. Rita Berto defined “stress” in her literature review of the role that nature plays in coping with stress (2014): “Stress” can be defined as the condition that results when person-environment transactions lead the individual to perceive a discrepancy (whether real or not) between the demands of a situation and the biological, psychological or social resources of the individual [1]. The negative effects of stress can be measured in various ways inside and out of the laboratory and these measures fall into three categories: those that rely on (1) neuro-physiological or bodily changes in the individual experiencing stress, (2) performance or behavioral changes and (3) self-report by individuals. As you will read in the following section, researchers have attempted to measure the benefits of green nature in many different ways, from proximity of trees, gardens, and natural areas to view from a window.
+<|text_end|>
+Output with 4 QnAs:
+<|separator|>
+
+[Q]: What lifestyle did humans leave for much of our history, as archeologists believe?
+[A]: Archeologists believe that for much of our history, humans lived a nomadic lifestyle: hunting animals and gathering plants for food.
+[Q]: How many centers of origins of crops existed according to Vavilov?
+[A]: The eight original Vavilvovian centers of origin included Central America and Mexico; parts of the Andes, Chile and Brazil–Paraguay; the Mediterranean; the Near East; Ethiopia; Central Asia; India; China; and Indo-Malaysia.
+[Q]: How do fruit and nut crops in North America compare to those in Africa?
+[A]: North American crops focus on berries (blueberries, cranberries, raspberries, strawberries) and nuts (chestnut, hazelnut, walnut), suited to temperate climates. In contrast, African crops like olives, melons, and watermelon thrive in warmer, drier conditions. North American crops emphasize antioxidants and healthy fats, while African crops focus on hydration and oil production. The differences reflect adaptations to regional climates and cultural significance.
+[Q]: Explain, why and how plants provide psychological benefits to humans?
+[A]: Plants provide psychological benefits to humans by reducing stress, enhancing recovery from mental fatigue, and improving overall well-being. Exposure to green nature, whether through direct interaction with plants, views of green spaces, or even images of nature, can positively impact mood and mental health. These benefits arise because natural environments help restore attention, lower physiological stress responses, and provide a calming effect, which contrasts with the overstimulation of urban and indoor settings. By creating a sense of connection with nature, plants help people feel more relaxed and mentally balanced.
+<|separator|>
+
+Text:
+<|text_start|>
+{text}
+<|text_end|>
+Output with {num_questions} QnAs:
